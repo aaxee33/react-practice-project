@@ -1,28 +1,13 @@
-import React from "react";
-import Accordion from "./components/Accordion";
-const App = () => {
-  const items = [
-    {
-      id: "1hjg",
-      label: "Can I use react in all of the projects",
-      content:
-        "Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.",
-    },
-    {
-      id: "2jhgjh",
-      label: "Can I use javascript in all of the projects",
-      content:
-        "Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.",
-    },
-    {
-      id: "3hg",
-      label: "Can I use angular in all of the projects",
-      content:
-        "Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.Yes you can use it anytime you want.",
-    },
-  ];
+import React, { useState } from "react";
+import Link from "./components/Link";
 
-  return <Accordion items={items} />;
+const App = () => {
+  return (
+    <div>
+      <Link to="/accordion">Go to accordion</Link>
+      <Link to="/dropdown">Go to dropdown</Link>
+    </div>
+  );
 };
 
 export default App;
