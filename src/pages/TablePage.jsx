@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "../components/Table";
+import SortableTable from "../components/SortableTable";
 
 const TablePage = () => {
   const fruits = [
@@ -10,7 +10,11 @@ const TablePage = () => {
   ];
 
   const configs = [
-    { label: "Name", render: (fruit) => fruit.name },
+    {
+      label: "Name",
+      render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name,
+    },
     {
       label: "Color",
       render: (fruit) => <div className={`p-3 b-2 ${fruit.color}`} />,
@@ -18,12 +22,12 @@ const TablePage = () => {
     {
       label: "Score",
       render: (fruit) => fruit.score,
-      header: () => <th className="bg-red-500">Score</th>,
+      sortValue: (fruit) => fruit.score,
     },
   ];
   return (
     <div>
-      <Table fruits={fruits} configs={configs} />
+      <SortableTable fruits={fruits} configs={configs} />
     </div>
   );
 };

@@ -5,7 +5,11 @@ const Table = ({ fruits, configs }) => {
     if (column.header) {
       return <Fragment key={column.label}>{column.header()}</Fragment>;
     }
-    return <th key={column.label}>{column.label}</th>;
+    return (
+      <th className=" p-2" key={column.label}>
+        {column.label}
+      </th>
+    );
   });
 
   const renderedData = fruits.map((fruit) => {
