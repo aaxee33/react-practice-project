@@ -1,0 +1,22 @@
+import { string } from "prop-types";
+
+const data = [
+  { name: "tomato", cost: 50, rating: 5 },
+  { name: "potato", cost: 40, rating: 2 },
+  { name: "apple", cost: 200, rating: 4 },
+];
+
+function getSortValue(vegetable) {
+  return vegetable.name;
+}
+
+data.sort((a, b) => {
+  const valueA = getSortValue(a);
+  const valueB = getSortValue(b);
+
+  if (typeof valueA === "string") {
+    return valueA.localeCompare(valueB);
+  } else {
+    return valueA - valueB;
+  }
+});
